@@ -30130,7 +30130,7 @@ input::-webkit-inner-spin-button {
   stroke: var(--theme-default);
 }
 .sidebar-menu .sidebar-list .sidebar-link {
-  padding: 12px 7px;
+  padding: 15px 7px;
   border-radius: 5px;
 }
 .sidebar-menu .sidebar-list .sidebar-link.active {
@@ -30968,7 +30968,7 @@ header ul[class*="header-"] > li:nth-child(8) {
     display: none;
   }
 }
-header ul[class*="header-"] > li:nth-child(8) .cloud-mode {
+header ul[class*="header-"] > li:nth-child(4) .cloud-mode {
   cursor: pointer;
   background-color: var(--theme-default);
   border-radius: 79px;
@@ -30977,7 +30977,7 @@ header ul[class*="header-"] > li:nth-child(8) .cloud-mode {
   justify-content: center;
   padding: 8px 14px 8px 10px;
 }
-[dir="rtl"] header ul[class*="header-"] > li:nth-child(8) .cloud-mode {
+[dir="rtl"] header ul[class*="header-"] > li:nth-child(4) .cloud-mode {
   padding: 8px 10px 8px 14px;
 }
 header ul[class*="header-"] > li:nth-child(8) .cloud-mode svg {
