@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="pixelstrap" />
+    <title></title>
+
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/vendors/flag-icon.css" />
+    <link rel="stylesheet" href="assets/css/iconly-icon.css" />
+    <link rel="stylesheet" href="assets/css/bulk-style.css" />
+    <link rel="stylesheet" href="assets/css/themify.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/vendors/weather-icons/weather-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/vendors/scrollbar.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/vendors/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/vendors/slick-theme.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      id="color"
+      rel="stylesheet"
+      href="assets/css/color-1.css"
+      media="screen"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/vendors/prism.css"
+    />
+  </head>
+  <body>
+    <div class="tap-top"><i class="iconly-Arrow-Up icli"></i></div>
+    <div class="loader-wrapper">
+      <div class="loader">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+      <header class="page-header row">
+        <div class="logo-wrapper d-flex align-items-center col-auto">
+          <a href="index.html"
+            ><img
+              class="light-logo img-fluid"
+              src="assets/images/logo/logo.svg"
+              alt="logo"
+              width="80%" /><img
+              class="dark-logo img-fluid"
+              src="assets/images/logo/logo-dark.svg"
+              alt="logo" /></a
+          ><a class="close-btn toggle-sidebar" href="javascript:void(0)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="svg-color"
+              width="16"
+              fill="currentColor"
+              class="bi bi-layout-sidebar"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5-1v12h9a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM4 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="page-main-header col">
+          <div class="header-left">
+            <form class="form-inline search-full col" action="#" method="get">
+              <div class="form-group w-100">
+                <div class="Typeahead Typeahead--twitterUsers">
+                  <div class="u-posRelative">
+                    <input
+                      class="demo-input Typeahead-input form-control-plaintext w-100"
+                      type="text"
+                      placeholder="Search Admiro .."
+                      name="q"
+                      title=""
+                      autofocus="autofocus"
+                    />
+                    <div class="spinner-border Typeahead-spinner" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                    <i class="close-search" data-feather="x"></i>
+                  </div>
+                  <div class="Typeahead-menu"></div>
+                </div>
+              </div>
+            </form>
+            <div class="form-group-header d-lg-block d-none">
+              <div class="Typeahead Typeahead--twitterUsers">
+                <div class="u-posRelative d-flex align-items-center">
+                  <input
+                    class="demo-input py-0 Typeahead-input form-control-plaintext w-100"
+                    type="text"
+                    placeholder="Type to Search..."
+                    name="q"
+                    title=""
+                  /><i class="search-bg iconly-Search icli"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-right">
+            <ul class="header-right">
+              <li class="search d-lg-none d-flex">
+                <a href="javascript:void(0)">
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.7437 3.16931C13.5722 3.45567 13.6105 3.82095 13.8378 4.06542C15.0419 5.36059 15.7773 7.09456 15.7773 9.00196C15.7773 13.0071 12.5305 16.2539 8.52539 16.2539C6.61799 16.2539 4.88402 15.5185 3.58886 14.3144C3.34438 14.0871 2.97911 14.0487 2.69275 14.2203C2.40639 14.3918 2.26788 14.732 2.35295 15.0548C3.48212 19.3396 7.38274 22.5 12.0234 22.5C17.5463 22.5 22.0234 18.0229 22.0234 12.5C22.0234 7.85931 18.863 3.95868 14.5782 2.82951C14.2554 2.74444 13.9153 2.88296 13.7437 3.16931ZM16.4225 5.22521C18.881 6.71513 20.5234 9.41634 20.5234 12.5C20.5234 17.1944 16.7179 21 12.0234 21C8.93977 21 6.23857 19.3575 4.74865 16.8991C5.89214 17.4469 7.17321 17.7539 8.52539 17.7539C13.359 17.7539 17.2773 13.8355 17.2773 9.00196C17.2773 7.64977 16.9704 6.36871 16.4225 5.22521Z"
+                      fill="#"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="dark-mode" href="javascript:void(0)">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-moon"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"
+                    />
+                  </svg>
+                </a>
+              </li>
+
+              <li class="custom-dropdown">
+                <a href="javascript:void(0)">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-bell"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"
+                    /></svg></a
+                ><span class="badge rounded-pill badge-primary">4</span>
+                <div
+                  class="custom-menu notification-dropdown py-0 overflow-hidden"
+                >
+                  <h3 class="title bg-primary-light dropdown-title">
+                    Notification <span class="font-primary">View all</span>
+                  </h3>
+                  <ul class="activity-timeline">
+                    <li class="d-flex align-items-start">
+                      <div class="activity-line"></div>
+                      <div class="activity-dot-primary"></div>
+                      <div class="flex-grow-1">
+                        <h6 class="f-w-600 font-primary">
+                          30-04-2024<span>Today</span
+                          ><span class="circle-dot-primary float-end">
+                            <svg class="circle-color">
+                              <use
+                                href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#circle"
+                              ></use></svg
+                          ></span>
+                        </h6>
+                        <h5>Alice Goodwin</h5>
+                        <p class="mb-0">
+                          Fashion should be fun. It shouldn't be labelled
+                          intellectual.
+                        </p>
+                      </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <div class="activity-dot-secondary"></div>
+                      <div class="flex-grow-1">
+                        <h6 class="f-w-600 font-secondary">
+                          28-06-2024<span>1 hour ago</span
+                          ><span class="float-end circle-dot-secondary">
+                            <svg class="circle-color">
+                              <use
+                                href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#circle"
+                              ></use></svg
+                          ></span>
+                        </h6>
+                        <h5>Herry Venter</h5>
+                        <p>
+                          I am convinced that there can be luxury in simplicity.
+                        </p>
+                      </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <div class="activity-dot-primary"></div>
+                      <div class="flex-grow-1">
+                        <h6 class="f-w-600 font-primary">
+                          04-08-2024<span>Today</span
+                          ><span class="float-end circle-dot-primary">
+                            <svg class="circle-color">
+                              <use
+                                href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#circle"
+                              ></use></svg
+                          ></span>
+                        </h6>
+                        <h5>Loain Deo</h5>
+                        <p>
+                          I feel that things happen for open new opportunities.
+                        </p>
+                      </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <div class="activity-dot-secondary"></div>
+                      <div class="flex-grow-1">
+                        <h6 class="f-w-600 font-secondary">
+                          12-11-2024<span>Yesterday</span
+                          ><span class="float-end circle-dot-secondary">
+                            <svg class="circle-color">
+                              <use
+                                href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#circle"
+                              ></use></svg
+                          ></span>
+                        </h6>
+                        <h5>Fenter Jessy</h5>
+                        <p>
+                          Sometimes the simplest things are the most profound.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="full-screen" href="javascript:void(0)">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-fullscreen"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5M.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </a>
+              </li>
+
+              <li class="profile-nav custom-dropdown">
+                <div class="user-wrap">
+                  <div class="user-img">
+                    <img src="assets/images/profile.png" alt="user" />
+                  </div>
+                  <div class="user-content">
+                    <h6>Zeeshan Ahmad</h6>
+                    <p class="mb-0">
+                      Admin<i class="fa-solid fa-chevron-down"></i>
+                    </p>
+                  </div>
+                </div>
+                <div class="custom-menu overflow-hidden">
+                  <ul class="profile-body">
+                    <li class="d-flex">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-person"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+                        />
+                      </svg>
+                      <a class="ms-2" href="user-profile.html">Account</a>
+                    </li>
+
+                    <li class="d-flex">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-box-arrow-in-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                        />
+                      </svg>
+                      <a class="ms-2" href="login.html">Log Out</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <!-- Page Body Start-->
+      <div class="page-body-wrapper">
+        <!-- Page sidebar start-->
+        <aside class="page-sidebar">
+          <div class="left-arrow" id="left-arrow">
+            <i data-feather="arrow-left"></i>
+          </div>
+          <div class="main-sidebar" id="main-sidebar">
+            <ul class="sidebar-menu" id="simple-bar">
+              <li class="pin-title sidebar-main-title">
+                <div>
+                  <h5 class="sidebar-title f-w-700">Pinned</h5>
+                </div>
+              </li>
+              <li class="sidebar-main-title">
+                <div>
+                  <h5 class="lan-1 f-w-700 sidebar-title">General</h5>
+                </div>
+              </li>
+              <li class="sidebar-list">
+                <i class="fa-solid fa-thumbtack"></i
+                ><a class="sidebar-link" href="javascript:void(0)">
+                  <svg
+                    class="stroke-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-speedometer"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.95 11.95 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0"
+                    />
+                  </svg>
+                  <h6>Dashboards</h6>
+                </a>
+              </li>
+              <li class="sidebar-list">
+                <i class="fa-solid fa-thumbtack"></i
+                ><a class="sidebar-link" href="javascript:void(0)">
+                  <svg class="stroke-icon">
+                    <use
+                      href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Pie"
+                    ></use>
+                  </svg>
+                  <h6 class="lan-2">Real-time Data</h6>
+                  <i class="iconly-Arrow-Right-2 icli"></i
+                ></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="">Real-time Data</a></li>
+                </ul>
+              </li>
+
+              <li class="sidebar-main-title">
+                <div>
+                  <h5 class="f-w-700 sidebar-title pt-3">Application</h5>
+                </div>
+              </li>
+
+              <li class="sidebar-list">
+                <i class="fa-solid fa-thumbtack"></i
+                ><a class="sidebar-link" href="file-manager.html">
+                  <svg class="stroke-icon">
+                    <use
+                      href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Paper"
+                    ></use>
+                  </svg>
+                  <h6 class="f-w-600">Overview</h6></a
+                >
+              </li>
+              <li class="sidebar-list">
+                <i class="fa-solid fa-thumbtack"></i
+                ><a class="sidebar-link" href="kanban-board.html">
+                  <svg class="stroke-icon">
+                    <use
+                      href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Wallet"
+                    ></use>
+                  </svg>
+                  <h6 class="f-w-600">Historical Data</h6></a
+                >
+              </li>
+
+              <li class="sidebar-list">
+                <i class="fa-solid fa-thumbtack"></i
+                ><a class="sidebar-link" href="javascript:void(0)">
+                  <svg class="stroke-icon">
+                    <use
+                      href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Profile"
+                    ></use>
+                  </svg>
+                  <h6 class="f-w-600">Insights</h6>
+                </a>
+              </li>
+              <li class="sidebar-list">
+                <i class="fa-solid fa-thumbtack"></i
+                ><a class="sidebar-link" href="bookmark.html">
+                  <svg class="stroke-icon">
+                    <use
+                      href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Bookmark"
+                    ></use>
+                  </svg>
+                  <h6 class="f-w-600">Geospatial Map</h6></a
+                >
+              </li>
+              <li class="sidebar-list">
+                <i class="fa-solid fa-thumbtack"></i
+                ><a class="sidebar-link" href="bookmark.html">
+                  <svg class="stroke-icon">
+                    <use
+                      href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Bookmark"
+                    ></use>
+                  </svg>
+                  <h6 class="f-w-600">Reports</h6></a
+                >
+              </li>
+              <li class="sidebar-list">
+                <i class="fa-solid fa-thumbtack"></i
+                ><a class="sidebar-link" href="bookmark.html">
+                  <svg class="stroke-icon">
+                    <use
+                      href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Bookmark"
+                    ></use>
+                  </svg>
+                  <h6 class="f-w-600">Settings</h6></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="right-arrow" id="right-arrow">
+            <i data-feather="arrow-right"></i>
+          </div>
+        </aside>
+        <!-- Page sidebar end-->
+        <div class="page-body">
+          <div class="container-fluid">
+            <div class="page-title">
+              <div class="row">
+                <div class="col-sm-6 col-12">
+                  <h2>Air Quality Dashboard</h2>
+                </div>
+                <div class="col-sm-6 col-12">
+                  <div class="breadcrumb">
+                    <div class="btn-group">
+                      <button class="btn btn-primary rounded-pill dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Export Data</button>
+                      <ul class="dropdown-menu dropdown-block">
+                      <li> <a class="dropdown-item" href="#">Excel File</a></li>
+                      <li><a class="dropdown-item" href="#"> CSV File</a></li>
+                      <li><a class="dropdown-item" href="#"> PDF File</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid starts-->
+          <div class="container-fluid default-dashboard">
+            <div class="row">
+              <div class="col-xl-4 col-md-12 box-col-12">
+                <div class="card overflow-hidden">
+                  <div class="chart-widget-top">
+                    <div class="row card-body pb-0 m-0">
+                      <div class="col-xl-9 col-lg-8 col-9 p-0">
+                        <h3 class="mb-2">Air Quality Index</h3>
+
+                        <span>Compare to last month</span>
+                      </div>
+                      <div class="col-xl-3 col-lg-4 col-3 text-end p-0">
+                        <h6 class="text-success">+65%</h6>
+                      </div>
+                    </div>
+                    <div>
+                      <div id="chart-widget1"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-12 box-col-12">
+                <div class="card overflow-hidden">
+                  <div class="chart-widget-top">
+                    <div class="row card-body pb-0 m-0">
+                      <div class="col-xl-9 col-lg-8 col-9 p-0">
+                        <h3 class="mb-2">Pollutant Level</h3>
+                        <span>Compare to last month</span>
+                      </div>
+                      <div class="col-xl-3 col-lg-4 col-3 text-end p-0">
+                        <h6 class="text-success">+65%</h6>
+                      </div>
+                    </div>
+                    <div id="chart-widget2">
+                      <div
+                        class="flot-chart-placeholder"
+                        id="chart-widget-top-second"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-12 box-col-12">
+                <div class="card overflow-hidden">
+                  <div class="chart-widget-top">
+                    <div class="row card-body pb-0 m-0">
+                      <div class="col-xl-9 col-lg-8 col-9 p-0">
+                        <h3 class="mb-2">Weather Data</h3>
+                        <span>Compare to last month</span>
+                      </div>
+                      <div class="col-xl-3 col-lg-4 col-3 text-end p-0">
+                        <h6 class="text-success">+65%</h6>
+                      </div>
+                    </div>
+                    <div id="chart-widget3">
+                      <div
+                        class="flot-chart-placeholder"
+                        id="chart-widget-top-third"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 box-col-12">
+                <div class="card overflow-hidden">
+                  <div class="card-header card-no-border pb-0">
+                    <h3>Monthly  History</h3>
+                  </div>
+                  <div class="bar-chart-widget">
+                    <div class="bottom-content card-body">
+                      <div class="row">
+                        <div class="col-12">
+                          <div id="chart-widget4"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            <div class="row">
+              <div class="col-lg-8 proorder-xxl-6 box-col-12">
+                <div class="card growthcard">
+                  <div class="card-header card-no-border pb-0">
+                    <div class="header-top">
+                      <h3>Monthly Revenue Growth</h3>
+                      <ul
+                        class="simple-wrapper nav nav-pills"
+                        id="myTab"
+                        role="tablist"
+                      >
+                        <li class="nav-item">
+                          <a
+                            class="nav-link"
+                            id="home-tab"
+                            data-bs-toggle="tab"
+                            href="#yearly"
+                            role="tab"
+                            aria-selected="true"
+                            >Yearly</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            class="nav-link"
+                            id="profile-tabs"
+                            data-bs-toggle="tab"
+                            href="#monthly"
+                            role="tab"
+                            aria-selected="false"
+                            >Monthly</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            class="nav-link active"
+                            id="contact-tab"
+                            data-bs-toggle="tab"
+                            href="#weekly"
+                            role="tab"
+                            aria-selected="false"
+                            >Weekly</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-body pb-0">
+                    <div id="growth-chart"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-xxl-3 col-xl-4 proorder-xxl-11 col-md-6 box-col-6"
+              >
+                <div class="card height-equal">
+                  <div class="card-header card-no-border pb-0">
+                    <div class="header-top">
+                      <h3>Total Invest</h3>
+                      <div class="dropdown icon-dropdown">
+                        <button
+                          class="btn"
+                          id="userdropdown1"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-end"
+                          aria-labelledby="userdropdown1"
+                        >
+                          <a class="dropdown-item" href="#">Weekly</a
+                          ><a class="dropdown-item" href="#">Monthly</a
+                          ><a class="dropdown-item" href="#">Yearly</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body total-invest">
+                    <div class="row">
+                      <div class="col-6 col-md-12 income-chart">
+                        <div class="Incomechrt" id="Incomechrt"></div>
+                      </div>
+                      <div class="col-6 col-md-12 invest-content text-center">
+                        <svg class="stroke-icon">
+                          <use
+                            href="https://admin.pixelstrap.net/admiro/assets/svg/icon-sprite.svg#chart-invest"
+                          ></use>
+                        </svg>
+                        <div class="btn btn-pill btn-primary">
+                          <span> </span>Live
+                        </div>
+                        <p class="mb-0 des-title">This Invest Cycle</p>
+                        <h3>7,48,000</h3>
+                        <p class="description-title">
+                          Current Balance this invest cycle
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="assets/js/vendors/jquery/jquery.min.js"></script>
+    <script src="assets/js/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/vendors/bootstrap/dist/js/popper.min.js"></script>
+    <script src="assets/js/vendors/font-awesome/fontawesome-min.js"></script>
+    <script src="assets/js/vendors/feather-icon/feather.min.js"></script>
+    <script src="assets/js/vendors/feather-icon/custom-script.js"></script>
+    <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/height-equal.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/chart/apex-chart/apex-chart.js"></script>
+    <script src="assets/js/chart/apex-chart/stock-prices.js"></script>
+    <script src="assets/js/scrollbar/simplebar.js"></script>
+    <script src="assets/js/scrollbar/custom.js"></script>
+    <script src="assets/js/slick/slick.min.js"></script>
+    <script src="assets/js/slick/slick.js"></script>
+    <script src="assets/js/js-datatables/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/js/js-datatables/datatables/datatable.custom.js"></script>
+    <script src="assets/js/js-datatables/datatables/datatable.custom1.js"></script>
+    <script src="assets/js/datatable/datatables/datatable.custom.js"></script>
+    <script src="assets/js/theme-customizer/customizer.js"></script>
+    <script src="assets/js/animation/tilt/tilt.jquery.js"></script>
+    <script src="assets/js/animation/tilt/tilt-custom.js"></script>
+    <script src="assets/js/dashboard/dashboard_1.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/chart-widget.js"></script>
+  </body>
+</html>
